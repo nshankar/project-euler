@@ -14,9 +14,9 @@ def special_sum(A: set) -> int:
         sumB = sum(B)
         lenB = len(B)
 
-        if lenB == 0 or lenB >= math.ceil(len(A) // 2 + 1):
-            # By symmetry of B and C we can skip large cardinality B
+        if lenB == 0:
             continue
+
         complement = A - set(B)
         for C in power_set(complement):
             sumC = sum(C)
